@@ -1,0 +1,93 @@
+name: 🐞 Bug report
+description: Reporta un bug en el proyecto
+title: "[BUG] Descripción corta del problema"
+labels: ["bug", "needs-triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por tomarte el tiempo de reportar este bug.
+        Por favor completa la información siguiente para ayudarnos a reproducirlo.
+
+  - type: checkboxes
+    id: duplicate-check
+    attributes:
+      label: ¿Ya buscaste si existe un issue similar?
+      description: Evita issues duplicados buscando primero en los issues abiertos.
+      options:
+        - label: Confirmo que revisé los issues abiertos y no encontré este problema
+          required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descripción del bug
+      description: Explica qué está pasando y cuál debería ser el comportamiento esperado.
+      placeholder: "Al hacer X, esperaba Y, pero ocurre Z…"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Pasos para reproducir
+      description: Lista los pasos exactos para reproducir el bug.
+      placeholder: |
+        1. Ir a '...'
+        2. Ejecutar '...'
+        3. Ver error '...'
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Entorno afectado
+      description: Indica dónde ocurre el problema (dev, qa, prod, local, etc.).
+      placeholder: "dev / qa / prod / local"
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Versión o commit
+      description: Especifica la versión, tag o hash de commit en el que ves el bug.
+      placeholder: "v1.2.3 o 123abc456"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severidad
+      description: ¿Qué tanto impacta este bug?
+      options:
+        - Bloqueante (no se puede continuar)
+        - Alta
+        - Media
+        - Baja
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs o mensajes de error relevantes
+      description: Copia y pega cualquier log, stack trace o mensaje de error relacionado.
+      render: shell
+      placeholder: |
+        [logs aquí]
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Información adicional
+      description: Cualquier contexto extra, capturas de pantalla, enlaces, etc.
+      placeholder: "Capturas de pantalla, contexto del negocio, workaround temporal…"
+    validations:
+      required: false
